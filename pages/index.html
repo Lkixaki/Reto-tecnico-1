@@ -94,7 +94,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <table class="table" id="tabla-productos">
+            <table class="table text-center" id="tabla-productos">
               <thead>
                 <tr>
                   <th>Titulo</th>
@@ -106,23 +106,16 @@
                   <th>Check</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+              <tbody id="tabla-body">
+                <!-- Aquí se llenarán los datos dinámicamente -->
               </tbody>
             </table>
             <div class="botones">
               <button type="button" class="btn btn-primary">Sumatoria</button>
-              <button type="button" class="btn btn-danger">Elimiinar</button>
+              <button type="button" class="btn btn-danger">Eliminar</button>
             </div>
           </div>
+
           <!-- /.card-body -->
         </div>
         <!-- /.card -->
@@ -156,6 +149,12 @@
   <!-- AdminLTE for demo purposes -->
   <script src="../dist/js/demo.js"></script>
   <!-- Page specific script -->
+
+  <script src="../Modelo/model.js"></script>
+  <script src="../Controlador/controller.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
   <!--Paginacion-->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
@@ -169,6 +168,15 @@
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
   <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap4.min.js"></script>
+  <!-- DataTables Buttons CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.0/css/buttons.dataTables.min.css">
+
+  <!-- DataTables Buttons JavaScript -->
+  <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
   <!-- DataTables Language File (Spanish) -->
   <script src="https://cdn.datatables.net/plug-ins/1.11.8/i18n/Spanish.json"></script>
@@ -194,7 +202,20 @@
           },
           lengthMenu: "Mostrar _MENU_ entradas",
         },
-        dom: ' lfrtip',
+        dom: 'lfrtipB',
+        buttons: [
+          {
+            extend: 'copy',
+            className: 'btn-customCopy',
+            text: '<i class="fas fa-copy" style="color:#097bc7"></i>', // Utiliza el icono de copiar de Font Awesome
+          },
+          
+          {
+            extend: 'print',
+            className: 'btn-customPrint',
+            text: '<i class="fas fa-print" style="color:red"></i>', // Utiliza el icono de imprimir de Font Awesome
+          },
+        ]
       });
 
     });

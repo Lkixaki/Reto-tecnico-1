@@ -55845,6 +55845,45 @@ hr{
 }
 .botones{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top:1rem;
+}
+.botones button{
+   margin-left: 4px;
+}
+/* Personaliza los estilos de los botones */
+.btn-customCopy {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* Personaliza el estilo de los botones en hover */
+.btn-customCopy:hover {
+    background-color: #45a049;
+}
+
+
+/* Personaliza los estilos de los botones */
+.btn-customPrint {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* Personaliza el estilo de los botones en hover */
+.btn-customPrint:hover {
+    background-color: #45a049;
 }
