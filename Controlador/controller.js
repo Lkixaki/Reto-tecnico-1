@@ -2,11 +2,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
         const productsData = await fetchDataFromAPI();
         renderTable(productsData);
+        
+        // Initialize DataTable after rendering the table
+        initDataTable();
     } catch (error) {
         console.error('Error en la obtención de datos:', error);
         // Puedes manejar el error aquí según tus necesidades
     }
 });
+
 
 function renderTable(data) {
     const tableBody = document.getElementById('tabla-body');

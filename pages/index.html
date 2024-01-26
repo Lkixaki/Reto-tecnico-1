@@ -125,9 +125,6 @@
     </div>
 
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; Cristian jaramillo</strong>
-    </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -151,7 +148,7 @@
   <!-- Page specific script -->
 
   <script src="../Modelo/model.js"></script>
-  <script src="../Controlador/controller.js" defer></script>
+  <script src="../Controlador/controller.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
@@ -181,7 +178,7 @@
   <!-- DataTables Language File (Spanish) -->
   <script src="https://cdn.datatables.net/plug-ins/1.11.8/i18n/Spanish.json"></script>
   <script>
-    $(document).ready(function () {
+    function initDataTable() {
       $('#tabla-productos').DataTable({
         paging: true,
         ordering: true,
@@ -209,7 +206,6 @@
             className: 'btn-customCopy',
             text: '<i class="fas fa-copy" style="color:#097bc7"></i>', // Utiliza el icono de copiar de Font Awesome
           },
-          
           {
             extend: 'print',
             className: 'btn-customPrint',
@@ -217,8 +213,8 @@
           },
         ]
       });
+    }
 
-    });
   </script>
 </body>
 
